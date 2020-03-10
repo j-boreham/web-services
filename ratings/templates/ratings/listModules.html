@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Rate My Prof</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Rate My Prof</a></h1>
+            <h2> Complete Module List</h>
+        </div>
+
+        {% for module in modules%}
+            <div>
+                <p>Module Title: {{module.name}}</p>
+                <p>Year :{{module.year}}</P>
+                <p>Semester: {{module.semester}}</p>
+            </div>
+        {% endfor %}
+
+    </body>
+</html>
