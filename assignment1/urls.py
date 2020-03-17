@@ -20,7 +20,7 @@ from ratings import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('listModules/', views.listModules.as_view(), name='modules'),
-    path('login/', views.oginUser.as_view(), name='login'),
+    path('login/', views.loginUser.as_view(), name='login'),
     path('register/',views.register.as_view(), name='register'),
     path('view/',views.viewProfessors.as_view(), name='professors'),
     path('specific-module-average/', views.professorModuleScore.as_view() ,name=' professor_module_score'),
