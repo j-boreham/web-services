@@ -5,14 +5,13 @@ from . import views
 
 urlpatterns = [
 
-    path('',views.home, name = 'home'),
-    path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
+    #path('',views.home, name = 'home'),
+    #path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
     path('listModules/', views.listModules.as_view(), name='modules'),
-    path('login/',views.login.as_view(), name = 'login'),
-    # path('logout/',views.logout,name='logout'),
+    path('login/', views.loginUser.as_view(), name='login'),
     path('register/',views.register.as_view(), name='register'),
-    # path('viewProfs/',views.viewProfessors, name='professors'),
-    # path('profModule/', views.professorModuleScore,name=' professor_module_score'),
-    # path('rate/', veiws.professorModuleInstanceScore, name = 'module_instance_score')
+    path('view/',views.viewProfessors.as_view(), name='professors'),
+    path('specific-module-average/', views.professorModuleScore.as_view() ,name=' professor_module_score'),
+    path('rate/', views.rateProfessor.as_view(), name = 'module_instance_score'),
 
 ]

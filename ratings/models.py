@@ -19,19 +19,17 @@ class Module(models.Model):
         return '%s %s ' % (self.name, self.code)
 
 class ModuleInstance(models.Model):
-    code = models.ForeignKey(Module, on_delete = models.CASCADE)
+    code = models.ForeignKey(Module, on_delete = models.PROTECT)
     year = models.IntegerField()
     semester = models.IntegerField()
     professors = models.ManyToManyField(Professor)
 
     def __str__(self):
-        # if self.professors.size() == 2:
-        #     pass
-        return '%s %i %i ' % (self.code, self.year, self.semester)+'-'.join([str(professor) for professor in self.professors.all()])
+        return '%s %i %i ' % (self.code, self.year, self.semester)
 
 class Rating(models.Model):
-    professor_uid = models.ForeignKey(Professor, on_delete = models.CASCADE)
-    module_instance = models.ForeignKey(ModuleInstance, on_delete = models.CASCADE)
+    professor_uid = models.ForeignKey(Professor, on_delete = models.PROTECT)
+    module_instance = models.ForeignKey(ModuleInstance, on_delete = models.PROTECT)
     rating = models.IntegerField()
 
     def __str__(self):
