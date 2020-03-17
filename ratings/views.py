@@ -16,7 +16,8 @@ from decimal import Decimal, ROUND_HALF_UP
 import json
 
 
-
+class home(APIView):
+    pass
 
 class register(APIView):
     '''Handling the registration of a new user and adding
